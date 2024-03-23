@@ -1,18 +1,37 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue"
-import MealList from "../views/MealList.vue"
+import SearchByLetter from "../views/SearchByLetter.vue"
+import SearchByIngredients from "../views/SearchByIngredients.vue"
+import SearchByName from "../views/SearchByName.vue"
+import DefaultLayout from '../components/DefaultLayout.vue'
 
 const routes = [
     {
         path: '/',
-        name: 'home',
-        component: Home
+        component: DefaultLayout,
+        children: [
+            {
+                path: '/',
+                name: 'home',
+                component: Home
+            },
+            {
+                path: '/by-name/:name?',
+                name: 'byName',
+                component: SearchByName
+            },
+            {
+                path: '/by-letter/:letter?',
+                name: 'byLetter',
+                component: SearchByLetter
+            }, {
+                path: '/by-ingredient/:ingredient?',
+                name: 'byIngredients',
+                component: SearchByIngredients
+            },
+        ]
     },
-    {
-        path: '/letter/:letter',
-        name: 'byLetter',
-        component: MealList
-    }
+
 ]
 
 const router = createRouter({
