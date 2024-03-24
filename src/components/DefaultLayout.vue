@@ -1,8 +1,6 @@
 <template>
-  <div class="bg-gray-100 h-full">
-    <Navbar />
-    <main><router-view /></main>
-  </div>
+  <Navbar />
+  <main><router-view /></main>
 </template>
 
 <script setup>

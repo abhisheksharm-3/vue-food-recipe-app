@@ -20,7 +20,7 @@
         Search by Letters
       </router-link>
       <router-link
-        :to="{ name: 'byIngredients' }"
+        :to="{ name: 'ingredients' }"
         class="px-2 h-full hover:bg-purple-100 duration-300 ease-in-out inline-flex items-center transition-colors"
       >
         Meals by Ingredients
